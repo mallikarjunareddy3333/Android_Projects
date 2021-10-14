@@ -8,6 +8,7 @@ import androidx.fragment.app.FragmentActivity;
 import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
@@ -25,6 +26,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
@@ -125,9 +127,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void onMapLongClick(LatLng latLng) {
 
         geocoder = new Geocoder(getApplicationContext(), Locale.getDefault());
+        String address = "";
 
         try {
-            String address = "";
+
             List<Address> listAddresses = geocoder.getFromLocation(latLng.latitude, latLng.longitude, 1);
 
             if(listAddresses != null && listAddresses.size() > 0) {
@@ -139,24 +142,43 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     address += listAddresses.get(0).getThoroughfare();
                 }
             }
-
-            if (address.equals("")) {
-                SimpleDateFormat sdf = new SimpleDateFormat("HH:mm yyyy-MM-dd");
-                address += sdf.format(new Date());
-            }
-
-            mMap.addMarker(new MarkerOptions().position(latLng).title(address));
-
-            MainActivity.locations.add(latLng);
-            MainActivity.places.add(address);
-
-            MainActivity.arrayAdapter.notifyDataSetChanged();
-
-            Toast.makeText(this, "Location Saved!", Toast.LENGTH_SHORT).show();
-
         }catch (Exception e) {
             e.printStackTrace();
         }
+
+        if (address.equals("")) {
+            SimpleDateFormat sdf = new SimpleDateFormat("HH:mm yyyy-MM-dd");
+            address += sdf.format(new Date());
+        }
+
+        mMap.addMarker(new MarkerOptions().position(latLng).title(address));
+
+        MainActivity.locations.add(latLng);
+        MainActivity.places.add(address);
+
+        MainActivity.arrayAdapter.notifyDataSetChanged();
+
+        SharedPreferences sharedPreferences = this.getSharedPreferences("arjun.myappcompany.memorableplaces", Context.MODE_PRIVATE);
+
+        try {
+
+            ArrayList<String> latitudes = new ArrayList<String>();
+            ArrayList<String> longitudes = new ArrayList<String>();
+
+            for (LatLng coord : MainActivity.locations) {
+                latitudes.add(Double.toString(coord.latitude));
+                longitudes.add(Double.toString(coord.longitude));
+            }
+
+            sharedPreferences.edit().putString("places", ObjectSerializer.serialize(MainActivity.places)).apply();
+            sharedPreferences.edit().putString("latitudes", ObjectSerializer.serialize(latitudes)).apply();
+            sharedPreferences.edit().putString("longitudes", ObjectSerializer.serialize(longitudes)).apply();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        Toast.makeText(this, "Location Saved!", Toast.LENGTH_SHORT).show();
 
     }
 
