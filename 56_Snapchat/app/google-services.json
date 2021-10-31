@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "239455671366",
+    "project_id": "snapchat-ab260",
+    "storage_bucket": "snapchat-ab260.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:239455671366:android:4199badf0755b7801da647",
+        "android_client_info": {
+          "package_name": "arjun.myappcompany.snapchat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "239455671366-c0c7mj5h6fq8pcf99ta5a3f0vpd5ph76.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAd1gB2sysAPdWPxlzeKA8u5LZCXcHDXE0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "239455671366-c0c7mj5h6fq8pcf99ta5a3f0vpd5ph76.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

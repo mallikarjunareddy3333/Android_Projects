@@ -1,0 +1,50 @@
+
+//    ParseObject score = new ParseObject("Score");
+//    score.put("username", "Arjun");
+//    score.put("score", 90);
+//
+//    score.saveInBackground(new SaveCallback() {
+//      @Override
+//      public void done(ParseException e) {
+//        if (e == null) {
+//          //OK
+//          Log.i("Success", "We saved the score");
+//        } else {
+//          e.printStackTrace();
+//        }
+//      }
+//    });
+//
+//    ParseQuery<ParseObject> query = ParseQuery.getQuery("Score");
+//    query.getInBackground("pZc5RkSOIF", new GetCallback<ParseObject>() {
+//      @Override
+//      public void done(ParseObject object, ParseException e) {
+//        if ( e == null && object != null ) {
+//
+//          object.put("score", 85);
+//          object.saveInBackground();
+//
+//          Log.i("username", object.getString("username"));
+//          Log.i("score", Integer.toString(object.getInt("score")));
+//        }
+//      }
+//    });
+
+//    ParseQuery<ParseObject> query = ParseQuery.getQuery("Score");
+//
+//    query.whereEqualTo("username", "Arjun");
+//    query.setLimit(1);
+//
+//    query.findInBackground(new FindCallback<ParseObject>() {
+//      @Override
+//      public void done(List<ParseObject> objects, ParseException e) {
+//        if (e == null) {
+//          if ( objects.size() > 0 ) {
+//            for ( ParseObject object: objects ) {
+//              Log.i("username", object.getString("username"));
+//              Log.i("score", Integer.toString(object.getInt("score")));
+//            }
+//          }
+//        }
+//      }
+//    });

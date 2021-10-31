@@ -1,0 +1,18 @@
+arjun/myappcompany/instagram/StarterApplication.java
+ arjun.myappcompany.instagram.StarterApplication
+arjun/myappcompany/instagram/BuildConfig.java
+ arjun.myappcompany.instagram.BuildConfig
+arjun/myappcompany/instagram/MainActivity.java
+ arjun.myappcompany.instagram.MainActivity
+ arjun.myappcompany.instagram.MainActivity$1
+ arjun.myappcompany.instagram.MainActivity$2
+arjun/myappcompany/instagram/UserFeedActivity.java
+ arjun.myappcompany.instagram.UserFeedActivity
+ arjun.myappcompany.instagram.UserFeedActivity$1
+ arjun.myappcompany.instagram.UserFeedActivity$1$1
+arjun/myappcompany/instagram/UserListActivity.java
+ arjun.myappcompany.instagram.UserListActivity
+ arjun.myappcompany.instagram.UserListActivity$1
+ arjun.myappcompany.instagram.UserListActivity$2
+ arjun.myappcompany.instagram.UserListActivity$3
+ arjun.myappcompany.instagram.UserListActivity$3$1
