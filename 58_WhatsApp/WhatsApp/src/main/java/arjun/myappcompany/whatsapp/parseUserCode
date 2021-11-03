@@ -1,0 +1,36 @@
+//    ParseUser user = new ParseUser();
+//
+//    user.setUsername("arjun");
+//    user.setPassword("myPass");
+//
+//    user.signUpInBackground(new SignUpCallback() {
+//      @Override
+//      public void done(ParseException e) {
+//        if(e == null) {
+//          //OK
+//          Log.i("Sign Up OK!", "We did it.");
+//        } else {
+//          e.printStackTrace();
+//        }
+//      }
+//    });
+
+//    ParseUser.logInInBackground("arjun", "myPass", new LogInCallback() {
+//      @Override
+//      public void done(ParseUser user, ParseException e) {
+//        if ( e == null ) {
+//          //OK
+//          Log.i("Success!", "We logged in!");
+//        } else {
+//          e.printStackTrace();
+//        }
+//      }
+//    });
+
+//    ParseUser.logOut();
+//
+//    if ( ParseUser.getCurrentUser() != null) {
+//      Log.i("Signed In", ParseUser.getCurrentUser().getUsername());
+//    } else {
+//      Log.i("not luck", "Not signed in");
+//    }
